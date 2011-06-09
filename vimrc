@@ -2,11 +2,8 @@
 "
 "
 " TODO
-"   hammer
+"   set up hammer
 "
-"   for the random plugins gh proj
-"   conque
-" sh "curl https://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                        pre setup "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -18,6 +15,8 @@ call pathogen#helptags()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                         setup    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set nocompatible                               " enable full vim mode
 
 set showcmd                                    " show commands in the lower right hand corner
 set backupdir=~/.vim/backup                    " save backups to .vim/backup
@@ -36,7 +35,6 @@ set softtabstop=2                              " auto tabs are 2 spaces
 set expandtab                                  " spaces instead of tabs
 set list listchars=tab:\ \ ,trail:·            " show leading and trailings spaces/tabs
 set encoding=utf-8                             " default encoding to utf-8
-set nocompatible                               " enable full vim mode
 set number                                     " line numbers
 set ruler                                      " cursor position in modeline
 syntax on                                      " syntax highlighting
@@ -80,7 +78,6 @@ let g:CommandTMatchWindowAtTop = 1
 
 " ctrl-F for Ack
 nmap <C-F> :Ack<space>
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 " ctrl-e for ConqueTerm
 function StartTerm()

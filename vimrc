@@ -3,6 +3,9 @@
 "
 " TODO
 "   hammer
+"
+"   for the random plugins gh proj
+"   conque
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                        pre setup "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -138,7 +141,7 @@ nmap <f2> :set hls!<cr>
 autocmd FileType ruby nmap <f3> op<space>'<esc>50i#'<esc>A<cr>p<space>'<c-r>%'<cr>p<space>'<esc>50i#'<esc>
 
 "reload .vimrc
-nmap <f12> :source ~/.vimrc.local<cr>
+nmap <f12> :source ~/.vimrc<cr>
 
 "open .vimrc
 nmap <f11> :e ~/.vimrc.local<cr>

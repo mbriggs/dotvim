@@ -97,3 +97,9 @@
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = https://github.com/wincent/Command-T
+[submodule "bundle/various-plugins"]
+	path = bundle/various-plugins
+	url = git@github.com:mbriggs/vim-plugins.git
+[submodule "bundle/various-themes"]
+	path = bundle/various-themes
+	url = git@github.com:mbriggs/vim-themes.git

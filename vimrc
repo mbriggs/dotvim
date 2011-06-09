@@ -29,7 +29,7 @@ set incsearch                                  " incremental search
 set ignorecase                                 " ignore case when searching
 set smartcase                                  " disable ignorecase when there are caps
 set nowrap                                     " turn off line wrapping
-set tabstop=2			                             " tabs are 2 spaces
+set tabstop=2                                  " tabs are 2 spaces
 set shiftwidth=2                               " >> goes 2 spaces
 set softtabstop=2                              " auto tabs are 2 spaces
 set expandtab                                  " spaces instead of tabs
@@ -179,9 +179,6 @@ nnoremap <silent> _ :exe "resize " . (winheight(0) * 2/3)<CR>
 " ctrl-][ to increase/decrease indentation
 vmap <c-]> >gv
 vmap <c-[> <gv
-
-" something is setting this to <gv
-vmap <esc> <esc>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

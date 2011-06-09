@@ -103,3 +103,30 @@
 [submodule "bundle/various-themes"]
 	path = bundle/various-themes
 	url = git@github.com:mbriggs/vim-themes.git
+[submodule "bundle/delimit-mate"]
+	path = bundle/delimit-mate
+	url = https://github.com/Raimondi/delimitMate.git
+[submodule "bundle/conque"]
+	path = bundle/conque
+	url = https://github.com/rson/vim-conque.git
+[submodule "bundle/ghetto-todo"]
+	path = bundle/ghetto-todo
+	url = git@github.com:mbriggs/vim-ghetto-todo.git
+[submodule "bundle/vis-incr"]
+	path = bundle/vis-incr
+	url = https://github.com/vim-scripts/VisIncr.git
+[submodule "bundle/camel-case-motion"]
+	path = bundle/camel-case-motion
+	url = https://github.com/vim-scripts/camelcasemotion.git
+[submodule "bundle/obvious-mode"]
+	path = bundle/obvious-mode
+	url = https://github.com/vim-scripts/Obvious-Mode.git
+[submodule "bundle/indexed-search"]
+	path = bundle/indexed-search
+	url = https://github.com/vim-scripts/IndexedSearch.git
+[submodule "bundle/task-list"]
+	path = bundle/task-list
+	url = https://github.com/vim-scripts/TaskList.vim.git
+[submodule "bundle/bufexplorer"]
+	path = bundle/bufexplorer
+	url = https://github.com/vim-scripts/bufexplorer.zip.git

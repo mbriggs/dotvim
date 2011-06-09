@@ -91,3 +91,6 @@
 [submodule "bundle/gist-vim"]
 	path = bundle/gist-vim
 	url = git://github.com/mattn/gist-vim.git
+[submodule "hammer"]
+	path = hammer
+	url = git://github.com/robgleeson/hammer.vim.git

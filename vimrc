@@ -80,6 +80,7 @@ let g:CommandTMatchWindowAtTop = 1
 
 " ctrl-F for Ack
 nmap <C-F> :Ack<space>
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 " ctrl-e for ConqueTerm
 function StartTerm()

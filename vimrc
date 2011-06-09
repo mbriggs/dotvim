@@ -6,6 +6,7 @@
 "
 "   for the random plugins gh proj
 "   conque
+" sh "curl https://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                        pre setup "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

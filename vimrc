@@ -139,7 +139,7 @@ autocmd FileType ruby nmap <f3> op<space>'<esc>50i#'<esc>A<cr>p<space>'<c-r>%'<c
 nmap <f12> :source ~/.vimrc<cr>
 
 "open .vimrc
-nmap <f11> :e ~/.vimrc.local<cr>
+nmap <f11> :e ~/.vimrc<cr>
 
 "toggle spellcheck
 nmap <f4> :set spell!<cr>
@@ -181,6 +181,9 @@ vmap <c-[> <gv
 "                                                         stuff    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" setup statusline
+source ~/.vim/statusline.vim
+
 " Remember last location in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -214,4 +217,5 @@ endfunction
 
 function s:setupMarkup()
   call s:setupWrapping()
+  set ft=markdown
 endfunction

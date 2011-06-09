@@ -1,9 +1,3 @@
-" trying to keep things as organized as I can
-"
-"
-" TODO
-"   set up hammer
-"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                        pre setup "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -101,6 +95,8 @@ imap <c-b> <esc>,be
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
 
+",p for hammer
+nmap <Leader>p :Hammer<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                         keymaps  "
@@ -205,3 +201,17 @@ au BufNewFile,BufRead *.json set ft=javascript
 
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                                       functions  "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+function s:setupWrapping()
+  set wrap
+  set wrapmargin=2
+  set textwidth=72
+endfunction
+
+function s:setupMarkup()
+  call s:setupWrapping()
+endfunction

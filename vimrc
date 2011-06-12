@@ -40,6 +40,7 @@ set wrap                                       " word wrap
 set showbreak=...                              " show ... at line break
 set guioptions-=m                              " remove menu bar
 set guioptions-=T                              " remove toolbar
+set guifont=Menlo:h14
 set confirm                                    " confirm save when leaving unsaved buffers
 set foldlevelstart=99                          " turn off default folding
 let mapleader=','                              " leader

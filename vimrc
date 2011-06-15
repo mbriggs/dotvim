@@ -11,7 +11,6 @@ call pathogen#helptags()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set nocompatible                               " enable full vim mode
-
 set showcmd                                    " show commands in the lower right hand corner
 set backupdir=~/.vim/backup                    " save backups to .vim/backup
 set directory=~/.vim/backup                    " save .swp files to .vim/backup
@@ -151,9 +150,9 @@ nmap <silent> <c-d> mr0Dpyyp`r
 nmap <silent> <c-i> I<esc>
 
 "system copy/paste
-vmap <C-y> "+y
-nmap <C-p> "+p
-imap <C-p> <c-o><c-p>
+vmap <A-y> "+y
+nmap <A-p> "+p
+imap <A-p> <c-o><c-p>
 
 "windows
 nmap <c-j> <c-w>j
@@ -172,9 +171,8 @@ nnoremap <s-y> y$
 nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> _ :exe "resize " . (winheight(0) * 2/3)<CR>
 
-" ctrl-][ to increase/decrease indentation
-vmap <c-]> >gv
-vmap <c-[> <gv
+" dont know why I need this
+vnoremap <esc> <esc>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

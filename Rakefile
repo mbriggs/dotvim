@@ -1,6 +1,6 @@
 task 'setup:plugins' do
   # hammer
-  sh "gem install github-markup redcarpet"
+  sh "gem install github-markup redcarpet RedCloth"
 
   # command_t
   Dir.chdir "bundle/command-t/ruby/command-t" do
@@ -13,4 +13,7 @@ task 'setup:plugins' do
     end
     sh "make clean && make"
   end
+
+  # set up backup dir
+  sh "mkdir backup"
 end

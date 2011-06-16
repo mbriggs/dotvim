@@ -28,7 +28,7 @@ set shiftwidth=2                               " >> goes 2 spaces
 set softtabstop=2                              " auto tabs are 2 spaces
 set expandtab                                  " spaces instead of tabs
 set list listchars=tab:\ \ ,trail:·            " show leading and trailings spaces/tabs
-set encoding=utf-8                             " default encoding to utf-8
+set encoding=utf-8                             " default encoding to utf-8  
 set number                                     " line numbers
 set ruler                                      " cursor position in modeline
 syntax on                                      " syntax highlighting
@@ -110,10 +110,10 @@ nmap L :tabn<cr>
 nmap <c-n> :tabe .<cr>
 
 "navigate by paragraph or by word
-nmap <a-j> }
-nmap <a-k> {
-nmap <a-h> b
-nmap <a-l> e
+nmap <d-j> }
+nmap <d-k> {
+nmap <d-h> b
+nmap <d-l> e
 
 "select all
 nmap <silent> <c-a> GVgg
@@ -176,6 +176,8 @@ nnoremap <silent> _ :exe "resize " . (winheight(0) * 2/3)<CR>
 " ctrl-][ to increase/decrease indentation
 vmap <c-]> >gv
 vmap <c-[> <gv
+
+vnoremap <esc> <esc>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

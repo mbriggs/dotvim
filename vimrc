@@ -65,8 +65,8 @@ nmap <Leader>n :NERDTreeToggle<CR>
 
 " Command-t
 let g:CommandTMaxHeight=20
-nmap <silent> <c-t> :CommandT<cr>
-imap <silent> <c-t> <esc>:CommandT<cr>
+nmap <silent> <d-t> :CommandT<cr>
+imap <silent> <d-t> <esc>:CommandT<cr>
 nmap <silent> <f5> :CommandTFlush<cr>
 let g:CommandTMatchWindowAtTop = 1
 
@@ -106,7 +106,7 @@ nmap <Leader>p :Hammer<CR>
 "tabs
 nmap H :tabp<cr>
 nmap L :tabn<cr>
-nmap <c-n> :tabe .<cr>
+nmap <c-t> :tabe .<cr>
 
 "navigate by paragraph or by word
 nmap <d-j> }
@@ -173,7 +173,6 @@ nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> _ :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " dont know why I need this
-vnoremap <esc> <esc>
 
 vnoremap <esc> <esc>
 

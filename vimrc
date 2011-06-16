@@ -45,6 +45,9 @@ let mapleader=','                              " leader
 let maplocalleader=',,'                        " localleader
 colorscheme blackboard                         " color
 
+" this is to drop all scrollbars sort of a hacky way to do it
+set guioptions+=LlRrb
+set guioptions-=LlRrb
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                         plugins  "
@@ -64,8 +67,8 @@ nmap <Leader>n :NERDTreeToggle<CR>
 
 " Command-t
 let g:CommandTMaxHeight=20
-nmap <silent> <c-t> :CommandT<cr>
-imap <silent> <c-t> <esc>:CommandT<cr>
+nmap <silent> <a-t> :CommandT<cr>
+imap <silent> <a-t> <esc>:CommandT<cr>
 nmap <silent> <f5> :CommandTFlush<cr>
 let g:CommandTMatchWindowAtTop = 1
 
@@ -84,6 +87,7 @@ vmap <c-r> <f9>
 
 " ctrl-space to toggle comments
 nmap <c-space> ,c<space>
+vmap <c-space> ,c<space>
 imap <c-space> <Esc>,c<space>
 
 "ctrl-b for bufexplorer
@@ -105,7 +109,7 @@ nmap <Leader>p :Hammer<CR>
 "tabs
 nmap H :tabp<cr>
 nmap L :tabn<cr>
-nmap <c-n> :tabe .<cr>
+nmap <c-t> :tabe .<cr>
 
 "navigate by paragraph or by word
 nmap <a-j> }
@@ -131,8 +135,6 @@ nmap <c-f5> :!ctags -R .<cr>
 "toggle search highlighting
 nmap <f2> :set hls!<cr>
 
-"debug message in ruby
-autocmd FileType ruby nmap <f3> op<space>'<esc>50i#'<esc>A<cr>p<space>'<c-r>%'<cr>p<space>'<esc>50i#'<esc>
 
 "reload .vimrc
 nmap <f12> :source ~/.vimrc<cr>
@@ -171,9 +173,31 @@ nnoremap <s-y> y$
 nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> _ :exe "resize " . (winheight(0) * 2/3)<CR>
 
+" kill all buffers
+nmap <c-q> :bufdo bd
+
+" ,so to source current file
+nmap <Leader>so :so %<cr>
+
 " dont know why I need this
 vnoremap <esc> <esc>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                                ruby debugging    "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" ,tp to add .tap &method(:puts) to a line
+autocmd FileType ruby nmap <Leader>tp mpA.tap &method(:puts)<esc>`p
+
+" ,apc to puts the line and copy it
+autocmd FileType ruby nmap <Leader>apc mpyypkIap(<esc>A)<esc>`p3l
+
+" ,ap<space> to puts the line
+autocmd FileType ruby nmap <Leader>ap<space> mpIap(<esc>A)<esc>`p3l
+
+
+"debug message in ruby
+autocmd FileType ruby nmap <Leader>db op<space>'<esc>50i#'<esc>A<cr>p<space>'<c-r>%'<cr>p<space>'<esc>50i#'<esc>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                         stuff    "

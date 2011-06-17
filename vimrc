@@ -179,8 +179,9 @@ nmap <c-q> :bufdo bd
 " ,so to source current file
 nmap <Leader>so :so %<cr>
 
-" dont know why I need this
+" dont know why I need to do this
 vnoremap <esc> <esc>
+unmap! ,w=
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                ruby debugging    "

@@ -145,3 +145,9 @@
 [submodule "conque"]
 	path = conque
 	url = https://github.com/vim-scripts/Conque-Shell.git
+[submodule "bundle/vimproc"]
+	path = bundle/vimproc
+	url = https://github.com/Shougo/vimproc.git
+[submodule "bundle/vimshell"]
+	path = bundle/vimshell
+	url = https://github.com/Shougo/vimshell.git

@@ -110,9 +110,13 @@ imap <C-BS> <C-W>
 cmap <C-BS> <C-W>
 
 "run test
-nmap ,rt :!ruby % &> /tmp/testlog &<cr>
-nmap ,rl :!gnome-terminal -e "tail -f /tmp/testlog<cr>"
-" nmap ,rl :ConqueTermVSplit tail -f /tmp/testlog<cr>
+" nmap ,rt :silent execute "!ruby % &> /tmp/testlog &"<cr>
+" nmap <silent> ,rl :!gnome-terminal --geometry 110x60 -e "tail -f /tmp/testlog"<cr>
+" nmap ,rl :VimShellExecute tail -f /tmp/testlog<cr><c-w>l
+nmap ,rt :VimShellExecute ruby <c-r>%<cr>
+
+"migrate
+nmap ,dbm :VimShellExecute rake db:migrate db:test:update<cr>
 
 "tabs
 nmap H :tabp<cr>

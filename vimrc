@@ -110,7 +110,9 @@ imap <C-BS> <C-W>
 cmap <C-BS> <C-W>
 
 "run test
-" nmap ,r :!gnome-terminal -e "$HOME/" &
+nmap ,rt :!ruby % &> /tmp/testlog &<cr>
+nmap ,rl :!gnome-terminal -e "tail -f /tmp/testlog<cr>"
+" nmap ,rl :ConqueTermVSplit tail -f /tmp/testlog<cr>
 
 "tabs
 nmap H :tabp<cr>

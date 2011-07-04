@@ -76,7 +76,7 @@ let g:CommandTMatchWindowAtTop = 1
 nmap <C-F> :Ack<space>
 
 " ctrl-e for ConqueTerm
-function StartTerm()
+function! StartTerm()
   execute 'ConqueTerm ' . $SHELL . ' --login'
   setlocal listchars=tab:\ \ 
 endfunction
@@ -105,6 +105,12 @@ nmap <Leader>p :Hammer<CR>
 "                                                         keymaps  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"c-backspace
+imap <C-BS> <C-W>
+cmap <C-BS> <C-W>
+
+"run test
+" nmap ,r :!gnome-terminal -e "$HOME/" &
 
 "tabs
 nmap H :tabp<cr>
@@ -181,7 +187,6 @@ nmap <Leader>so :so %<cr>
 
 " dont know why I need to do this
 vnoremap <esc> <esc>
-unmap! ,w=
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                ruby debugging    "
@@ -232,13 +237,13 @@ au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 "                                                       functions  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-function s:setupWrapping()
+function! s:setupWrapping()
   set wrap
   set wrapmargin=2
   set textwidth=72
 endfunction
 
-function s:setupMarkup()
+function! s:setupMarkup()
   call s:setupWrapping()
   set ft=markdown
 endfunction

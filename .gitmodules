@@ -139,3 +139,9 @@
 [submodule "vim-themes"]
 	path = vim-themes
 	url = git@github.com:mbriggs/vim-themes.git
+[submodule "bundle/ragtag"]
+	path = bundle/ragtag
+	url = https://github.com/tpope/vim-ragtag.git
+[submodule "conque"]
+	path = conque
+	url = https://github.com/vim-scripts/Conque-Shell.git

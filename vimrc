@@ -46,11 +46,13 @@ let mapleader=','                              " leader
 let maplocalleader=',,'                        " localleader
 colorscheme blackboard                         " color
 
+" this is to drop all scrollbars sort of a hacky way to do it
+set guioptions+=LlRrb
+set guioptions-=LlRrb
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                         plugins  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 
 " CTags
 nmap <C-F5> :!ctags --extra=+f -R *<CR><CR>
@@ -74,10 +76,6 @@ let g:CommandTMatchWindowAtTop = 1
 nmap <C-F> :Ack<space>
 
 " ctrl-e for ConqueTerm
-function StartTerm()
-  execute 'ConqueTerm ' . $SHELL . ' --login'
-  setlocal listchars=tab:\ \ 
-endfunction
 
 nmap <C-e> :call StartTerm()<CR>
 " ctrl-r send to console
@@ -85,6 +83,7 @@ vmap <c-r> <f9>
 
 " ctrl-space to toggle comments
 nmap <c-space> ,c<space>
+vmap <c-space> ,c<space>
 imap <c-space> <Esc>,c<space>
 
 "ctrl-b for bufexplorer
@@ -102,7 +101,6 @@ nmap <Leader>p :Hammer<CR>
 "                                                         keymaps  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 "tabs
 nmap H :tabp<cr>
 nmap L :tabn<cr>
@@ -116,6 +114,9 @@ nmap <d-l> e
 
 "select all
 nmap <silent> <c-a> GVgg
+
+" cmd-e opens netrw in the current dir
+nmap <d-e> :Ex<cr>
 
 " E edits from the local dir
 nmap E :e <C-R>=expand("%:p:h") . "/" <CR>
@@ -131,9 +132,6 @@ nmap <c-f5> :!ctags -R .<cr>
 
 "toggle search highlighting
 nmap <f2> :set hls!<cr>
-
-"debug message in ruby
-autocmd FileType ruby nmap <f3> op<space>'<esc>50i#'<esc>A<cr>p<space>'<c-r>%'<cr>p<space>'<esc>50i#'<esc>
 
 "reload .vimrc
 nmap <f12> :source ~/.vimrc<cr>
@@ -172,10 +170,30 @@ nnoremap <s-y> y$
 nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> _ :exe "resize " . (winheight(0) * 2/3)<CR>
 
-" dont know why I need this
+" kill all buffers
+nmap <c-q> :bufdo bd
 
+" ,so to source current file
+nmap <Leader>so :so %<cr>
+
+" dont know why I need this
 vnoremap <esc> <esc>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                                ruby debugging    "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" ,tp to add .tap &method(:puts) to a line
+autocmd FileType ruby nmap <Leader>tp mpA.tap &method(:puts)<esc>`p
+
+" ,apc to puts the line and copy it
+autocmd FileType ruby nmap <Leader>apc mpyypkIap(<esc>A)<esc>`p3l
+
+" ,ap<space> to puts the line
+autocmd FileType ruby nmap <Leader>ap<space> mpIap(<esc>A)<esc>`p3l
+
+"debug message in ruby
+autocmd FileType ruby nmap <Leader>db op<space>'<esc>50i#'<esc>A<cr>p<space>'<c-r>%'<cr>p<space>'<esc>50i#'<esc>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                         stuff    "
@@ -218,4 +236,9 @@ endfunction
 function s:setupMarkup()
   call s:setupWrapping()
   set ft=markdown
+endfunction
+
+function StartTerm()
+  execute 'ConqueTerm ' . $SHELL . ' --login'
+  setlocal listchars=tab:\ \ 
 endfunction

@@ -76,6 +76,10 @@ let g:CommandTMatchWindowAtTop = 1
 nmap <C-F> :Ack<space>
 
 " ctrl-e for ConqueTerm
+function! StartTerm()
+  execute 'ConqueTerm ' . $SHELL . ' --login'
+  setlocal listchars=tab:\ \ 
+endfunction
 
 nmap <C-e> :call StartTerm()<CR>
 " ctrl-r send to console
@@ -100,6 +104,19 @@ nmap <Leader>p :Hammer<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                                         keymaps  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"c-backspace
+imap <C-BS> <C-W>
+cmap <C-BS> <C-W>
+
+"run test
+" nmap ,rt :silent execute "!ruby % &> /tmp/testlog &"<cr>
+" nmap <silent> ,rl :!gnome-terminal --geometry 110x60 -e "tail -f /tmp/testlog"<cr>
+" nmap ,rl :VimShellExecute tail -f /tmp/testlog<cr><c-w>l
+nmap ,rt :VimShellExecute ruby <c-r>%<cr>
+
+"migrate
+nmap ,dbm :VimShellExecute rake db:migrate db:test:update<cr>
 
 "tabs
 nmap H :tabp<cr>
@@ -176,7 +193,7 @@ nmap <c-q> :bufdo bd
 " ,so to source current file
 nmap <Leader>so :so %<cr>
 
-" dont know why I need this
+" dont know why I need to do this
 vnoremap <esc> <esc>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -227,13 +244,13 @@ au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 "                                                       functions  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-function s:setupWrapping()
+function! s:setupWrapping()
   set wrap
   set wrapmargin=2
   set textwidth=72
 endfunction
 
-function s:setupMarkup()
+function! s:setupMarkup()
   call s:setupWrapping()
   set ft=markdown
 endfunction

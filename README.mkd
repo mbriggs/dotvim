@@ -1,0 +1,110 @@
+
+
+               ,'``.._   ,'``.
+              :,--._:)\,:,._,.:       All Glory to
+              :`--,''   :`...';\      the HYPNO TOAD!
+               `,'       `---'  `.
+               /                 :
+              /                   \
+            ,'                     :\.___,-.
+           `...,---'````-..._    |:       \
+             (                 )   ;:    )   \  _,-.
+              `.              (   //          `'    \
+               :               `.//  )      )     , ;
+             ,-|`.            _,'/       )    ) ,' ,'
+            (  :`.`-..____..=:.-':     .     _,' ,'
+             `,'\ ``--....-)='    `._,  \  ,') _ '``._
+          _.-/ _ `.       (_)      /     )' ; / \ \`-.'
+         `--(   `-:`.     `' ___..'  _,-'   |/   `.)
+             `-. `.`.``-----``--,  .'
+               |/`.\`'        ,','); SSt
+                   `         (/  (/)))`'`'`'`'`'
+
+
+
+My .vim folder
+==============
+
+currently using vundle to manage :
+
+ - Command-T
+ - IndexedSearch
+ - VisIncr
+ - ack.vim
+ - camelcasemotion
+ - delimitMate
+ - neocomplcache
+ - nerdcommenter
+ - quickrun
+ - rspec.vim
+ - syntastic
+ - testerical
+ - vim-coffee-script
+ - vim-colors-solarized
+ - vim-css3-syntax
+ - vim-cucumber
+ - vim-endwise
+ - vim-fugitive
+ - vim-ghetto-todo
+ - vim-haml
+ - vim-javascript
+ - vim-markdown
+ - vim-rails
+ - vim-repeat
+ - vim-ruby
+ - vim-smartword
+ - vim-sparkup
+ - vim-surround
+ - vim-surround_custom_mapping
+ - vim-themes
+ - vimfiler
+ - vimproc
+ - vundle
+
+(rebuild this list with `r!ls bundle`)
+
+Install
+-------
+
+ - clone repository into .vim
+ - run rake init to set up some basic things. This command should only
+   ever be run once
+ - open vim, and run :BundleInstall. This will use vundle to install the
+   latest version of all plugins into ~/.vim/bundle/.
+ - close vim, and run rake plugin:setup. This will do things like
+   compile binaries required for some plugins.
+ - Reopen vim. Should see solarized light and everything should be
+   working
+ - win
+
+File Structure
+-------------------
+
+ - *after*(/plugin/keymaps.vim): All custom key maps are in here, so that they get priority over plugins
+ - *autoload*: pathogen (plugin management system) is installed here
+ - *backup*: location for all vim temp files
+ - *bundle*: All plugins are installed here by vundle
+
+vimrc
+-----
+
+vimrc is basically just a bootstrap file that will load each of the following files
+
+ - *settings.vim*: editor config
+ - *vundles.vim*: plugin management configuration by vundle
+ - *plugin-config*: keymaps and settings
+ - *autocmds.vim*: setting up things to do with hooks
+ - *functions.vim*: a bunch of functions, mostly pillaged from other peoples vimrc files
+ - *statusline.vim*: bunch of customizations for the modeline (lifted from scrooloose's vimrc)
+ - *keymaps.vim*: link to bundle/plugin/keymaps.vim for convenience
+
+Notes
+-----
+
+due to the way vundle works, you need to be in vim to invoke it, but
+there are a lot of configuration settings that depend on specific
+plugins to be installed. To avoid a ton of errors, most of the
+configuration will not load until a file exists in
+~/.vim/.plugins_installed. if the installation instructions are
+followed, you shouldn't have to worry about this, but it can be useful
+to know if something isn't working.

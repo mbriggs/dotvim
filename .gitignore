@@ -1,0 +1,5 @@
+backup/*
+.netrwhist
+bin/*
+bundle
+.plugins_installed

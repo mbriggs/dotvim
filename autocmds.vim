@@ -21,6 +21,7 @@ au FileType make set noexpandtab
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
 
+
 " set spell check
 autocmd filetype svn,*commit*,markdown set spell
 
@@ -35,6 +36,9 @@ function! s:setupMarkdownBuffer()
   set wrapmargin=2
   set textwidth=72
 endfunction
+
+" strip trailing whitespace
+au BufWritePre * :%s/\s\+$//e
 
 " add json syntax highlighting
 au BufNewFile,BufRead *.json set ft=javascript

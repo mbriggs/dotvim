@@ -3,7 +3,10 @@ call vundle#rc()
 
 Bundle 'tpope/vim-rake'
 Bundle 'benmills/vimux'
-Bundle 'pgr0ss/vimux-ruby-test'
+Bundle 'mbriggs/vimux-ruby-test'
+Bundle 'mbriggs/vim-themes'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-eunuch'
 Bundle 'vim-scripts/TabIndent'
 Bundle 'tpope/vim-bundler'
 Bundle 'digitaltoad/vim-jade'
@@ -24,7 +27,7 @@ Bundle 'vim-scripts/camelcasemotion'
 Bundle 'wincent/Command-T'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'tpope/vim-cucumber'
-Bundle 'Raimondi/delimitMate'
+Bundle 'jiangmiao/auto-pairs'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
@@ -46,3 +49,7 @@ Bundle 'Shougo/vimfiler'
 Bundle 'Shougo/vimproc'
 Bundle 'vim-scripts/VisIncr'
 Bundle 'vim-scripts/IndexedSearch'
+" snipmate
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"

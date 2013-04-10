@@ -1,9 +1,7 @@
 
-" delimate
-let g:delimitMate_expand_cr = 1
-let g:delimitMate_expand_space = 1
-let delimitMate_balance_matchpairs = 1
 
+" snipmate
+let g:snips_trigger_key='<c-space>'
 
 " rails
 let g:rails_menu=0
@@ -14,11 +12,14 @@ autocmd User Rails/app/presenters/*.*
     \ let b:rails_alternate = substitute(rails#buffer().path(), 'app/','test/unit/','')
 autocmd User Rails/app/assets/javascripts/*.*
     \ let b:rails_alternate = fnamemodify(rails#buffer().path(),
-    \ ":s?app/assets/?spec/?:r"). "_spec." . 
+    \ ":s?app/assets/?spec/?:r"). "_spec." .
     \ fnamemodify(rails#buffer().path(), ":e")
 autocmd User Rails/spec/javascripts/*.*
     \ let b:rails_alternate = fnamemodify(rails#buffer().path(),
     \ ":s?spec/?app/assets/?:s?_spec??")
+
+" EasyMotion
+let g:EasyMotion_leader_key = '<Leader>'
 
 " surround
 nmap <c-s> ysiw
@@ -46,11 +47,13 @@ nmap ,sl :Ack<space>
 " Command-t
 let g:CommandTMaxHeight=20
 if has("gui_macvim")
-  nmap <silent> <d-f> :CommandT<cr>
-  nmap <silent> <d-b> :CommandTBuffer<cr>
+  map <silent> <d-f> :CommandT<cr>
+  map <silent> <d-d> :CommandT %%<cr>
+  map <silent> <d-b> :CommandTBuffer<cr>
 else
-  nmap <silent> <c-f> :CommandT<cr>
-  nmap <silent> <c-b> :CommandTBuffer<cr>
+  map <silent> <c-f> :CommandT<cr>
+  map <silent> <c-d> :CommandT %%<cr>
+  map <silent> <c-b> :CommandTBuffer<cr>
 endif
 
 nmap <silent> <f5> :CommandTFlush<cr>
@@ -66,12 +69,14 @@ autocmd BufReadPost vimfiler set bufhidden=delete
 "syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=0
-let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_loc_list=0
 let g:syntastic_quiet_warnings=1
 let g:syntastic_javascript_checker = 'jshint'
 au FileType javascript let g:syntastic_quiet_warnings=0
+au BufRead,BufNewFile *.hbs let g:syntastic_enable_signs=0
 
 "neocomplcache
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_camel_case_completion = 1

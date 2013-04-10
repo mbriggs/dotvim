@@ -2,9 +2,14 @@
 nnoremap <tab> ==
 vnoremap <tab> ==
 
+inoremap <d-bs> <esc>ddi
+inoremap <d-cr> <esc>o
 
 " alt-tab
 nmap ,, <c-^>
+
+" close all other splits
+nmap - :only<cr>
 
 " CTags
 nmap <C-F5> :!ctags --extra=+f -R *<CR><CR>
@@ -59,9 +64,6 @@ nmap <c-return> mpo<esc>`p
 "new line, but stay at current position
 imap <c-return> <esc><c-return>a
 
-"visual replace
-vmap <silent> r "_dP
-
 "toggle spellcheck
 nmap <f4> :set spell!<cr>
 
@@ -96,7 +98,7 @@ if has("gui_macvim")
   au FileType ruby imap <buffer> <d-l> <space>=><space>
 
   "d-l to make a function in javascript
-  au FileType javascript imap <buffer> <d-l> function() {}<esc>i
+  au FileType javascript imap <buffer> <d-l> function(){}<esc>i
 
   " quickfix nav
   nmap <d-left> :cp<cr>
@@ -114,7 +116,7 @@ if has("gui_gtk2")
   au FileType ruby imap <buffer> <a-l> <space>=><space>
 
   "d-l to make a function in javascript
-  au FileType javascript imap <buffer> <a-l> function() {}<esc>i
+  au FileType javascript imap <buffer> <a-l> function(){}<esc>i
 
   " ctrl-/ to toggle comment
   nmap <a-/> ,c<space>

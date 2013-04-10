@@ -36,10 +36,10 @@ set confirm                         " confirm save when leaving unsaved buffers
 set foldlevelstart=99               " turn off default folding
 let mapleader=','                   " leader
 let maplocalleader=',,'             " localleader
+set wildignore+=.git,.hg,node_modules,tmp
 
 if !has("gui")
   let &t_Co=256
-  let g:solarized_termcolors=16
 endif
 set background="dark"
 colorscheme solarized
